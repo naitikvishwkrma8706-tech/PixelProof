@@ -1,0 +1,11 @@
+# Keep only deployment files
+*
+!.gitignore
+!predict.py
+!requirements.txt
+!models/
+!models/resnet18_tigas.pth
+# Backup files
+*.backup
+*.backup.*
+*.bak

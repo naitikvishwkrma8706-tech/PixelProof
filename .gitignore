@@ -1,0 +1,47 @@
+
+# Node.js
+node_modules/
+backend/node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Python virtual environment
+ai-model/venv/
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Dataset and testing files
+ai-model/dataset/
+ai-model/TIGAS/
+ai-model/cifake-check/
+ai-model/real_world_test/
+ai-model/test-images/
+
+# Python temporary files
+*.log
+*.tmp
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Editor files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+
+# Backup files
+*.backup
+*.bak
+
+backend/controllers/historyController.backup.js
+
+*.backup.*
