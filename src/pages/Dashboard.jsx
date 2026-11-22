@@ -53,12 +53,15 @@ const Dashboard = () => {
         setHistoryLoading(true);
         setHistoryError("");
 
-        const response = await fetch("http://localhost:5000/api/history", {
-          method: "GET",
-          headers: {
-            Authorization: `Bearer ${token}`,
+        const response = await fetch(
+          `${import.meta.env.VITE_API_URL}/api/history`,
+          {
+            method: "GET",
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
           },
-        });
+        );
 
         const data = await response.json();
 
@@ -250,13 +253,16 @@ const Dashboard = () => {
       const formData = new FormData();
       formData.append("image", selectedFile);
 
-      const response = await fetch("http://localhost:5000/api/history/upload", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/history/upload`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          body: formData,
         },
-        body: formData,
-      });
+      );
 
       const data = await response.json();
 
@@ -279,11 +285,14 @@ const Dashboard = () => {
       }, 100);
 
       // Refresh detection history
-      const historyResponse = await fetch("http://localhost:5000/api/history", {
-        headers: {
-          Authorization: `Bearer ${token}`,
+      const historyResponse = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/history`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         },
-      });
+      );
 
       const historyData = await historyResponse.json();
 
