@@ -1,0 +1,12 @@
+
+.git
+**/node_modules
+**/venv
+**/__pycache__
+**/*.pyc
+backend/uploads
+frontend
+.env
+**/.env
+ai-model/TIGAS
+ai-model/datasets
