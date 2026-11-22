@@ -1,10 +1,15 @@
 const multer = require("multer");
 const path = require("path");
 const crypto = require("crypto");
+const fs = require("fs");
+
+// Automatically create uploads folder
+const uploadDir = path.join(__dirname, "../uploads");
+fs.mkdirSync(uploadDir, { recursive: true });
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, path.join(__dirname, "../uploads"));
+    cb(null, uploadDir);
   },
 
   filename: (req, file, cb) => {
